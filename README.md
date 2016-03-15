@@ -1,17 +1,20 @@
 # JavaScript Boilerplate
 
->Includes:
-* webpack
-* babel
-* react
-* react-css-modules
+>Development (w/[hmr](https://webpack.github.io/docs/hot-module-replacement.html)) and production builds using [webpack](http://webpack.github.io)
 
+>Code checking with [eslint](http://eslint.org) using airbnb preset
+
+>ES6 support via [babel](https://babeljs.io)
+
+>Components via [react](https://facebook.github.io/react/) for js and [react-css-modules](https://github.com/gajus/react-css-modules) for styles
+
+## Requirements:
+
+> [node](https://nodejs.org/en/) 5.x +
+
+> [npm](https://www.npmjs.com) 3.x +
 
 ## Build / Develop
-> Requirements:
-* [node](https://nodejs.org/en/) 5.x +
-* [npm](https://www.npmjs.com) 3.x +
-
 ```bash
 # Clone the repo
 git clone https://github.com/dryror/javascript-boilerplate.git
