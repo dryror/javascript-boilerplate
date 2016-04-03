@@ -1,14 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Greeting from './components/Greeting';
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
 
-// Enable hot module replacement
+const store = configureStore();
+const rootEl = document.getElementById('root');
+
+let render = () => {
+  const App = require('./components/App').default;
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    rootEl
+  );
+};
+
 if (module.hot) {
-  module.hot.accept();
+  // Support hot reloading of components
+  // and display an overlay for runtime errors
+  const renderApp = render;
+  const renderError = (error) => {
+    const RedBox = require('redbox-react');
+    ReactDOM.render(
+      <RedBox error={error} />,
+      rootEl
+    );
+  };
+  render = () => {
+    try {
+      renderApp();
+    } catch (error) {
+      renderError(error);
+    }
+  };
+  module.hot.accept('./components/App', () => {
+    setTimeout(render);
+  });
 }
 
-// Render the app
-ReactDOM.render(
-  <Greeting message="hello, world!" />,
-  document.getElementById('container')
-);
+render();

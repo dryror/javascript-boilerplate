@@ -1,14 +1,21 @@
-import React from 'react';
-import cssModules from 'react-css-modules';
+import React, { PropTypes } from 'react';
 import styles from './Greeting.css';
 
-const Greeting = (props) =>
-  <h1 styleName="root">
-    {props.message}
-  </h1>;
-
-Greeting.propTypes = {
-  message: React.PropTypes.string.isRequired,
+const Greeting = (props) => {
+  const { onClick, message } = props;
+  return (
+    <h1
+      className={styles.root}
+      onClick={onClick}
+    >
+      {message}
+    </h1>
+  );
 };
 
-export default cssModules(Greeting, styles);
+Greeting.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  message: PropTypes.string.isRequired,
+};
+
+export default Greeting;

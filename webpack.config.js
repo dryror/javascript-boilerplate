@@ -1,9 +1,13 @@
 /* eslint no-var:0 */
 var path = require('path');
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: [
+    'webpack-hot-middleware/client',
+    './src/index.js',
+  ],
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, 'build'),
@@ -13,10 +17,9 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react'],
-        },
+        loaders: ['babel'],
+        exclude: /node_modules/,
+        include: path.join(__dirname, 'src'),
       },
       {
         test: /\.css$/,
@@ -28,12 +31,11 @@ module.exports = {
     ],
   },
   devtool: 'cheap-eval-source-map',
-  devServer: {
-    contentBase: 'build/',
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };

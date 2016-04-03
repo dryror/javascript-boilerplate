@@ -1,4 +1,6 @@
 {
   "name": "Greeting",
-  "main": "Greeting.js"
+  "main": "Greeting.js",
+  "version": "0.0.0",
+  "private": true
 }
