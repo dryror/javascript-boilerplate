@@ -4,8 +4,8 @@
   "description": "Boilerplate for JavaScript web apps",
   "main": "src/index.js",
   "dependencies": {
-    "react": "0.14.8",
-    "react-dom": "0.14.8",
+    "react": "15.0.0",
+    "react-dom": "15.0.0",
     "react-redux": "4.4.1",
     "redux": "3.3.1"
   },
@@ -28,7 +28,7 @@
     "html-webpack-plugin": "2.15.0",
     "jsdom": "8.3.0",
     "mocha": "2.4.5",
-    "react-addons-test-utils": "0.14.8",
+    "react-addons-test-utils": "15.0.0",
     "redbox-react": "1.2.3",
     "style-loader": "0.13.1",
     "webpack": "1.12.14",
