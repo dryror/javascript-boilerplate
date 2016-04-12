@@ -42,7 +42,7 @@
     "clean": "rm -rf build",
     "deploy": "npm run build && gh-pages -d build",
     "lint": "eslint src/**/*.js",
-    "start": "node server.js",
+    "start": "node devServer.js",
     "test": "mocha test.config.js src/**/*.spec.js",
     "test:watch": "npm test -- --watch"
   },
