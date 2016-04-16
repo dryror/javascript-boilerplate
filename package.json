@@ -1,6 +1,6 @@
 {
   "name": "javascript-boilerplate",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Boilerplate for JavaScript web apps",
   "main": "src/index.js",
   "dependencies": {
