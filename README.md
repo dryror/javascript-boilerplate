@@ -1,5 +1,11 @@
 # JavaScript Boilerplate
 
+> React / Redux / ES6 app starter.
+
+> ESLint code linting with airbnb presets
+
+> Enzyme, mocha, and expect for unit tests
+
 ## Requirements:
 
 > [node](https://nodejs.org/en/) 5.x +
